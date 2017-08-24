@@ -13,7 +13,7 @@ app.get("/template", function(req, resp) {
     })
     resp.send(str)
 });
-//sazlut gfhdk
+
 
 
 app.engine("html", function(path, options, callback) {
