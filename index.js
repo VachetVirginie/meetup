@@ -6,6 +6,8 @@ const mustache = require('mustache');
 
 let app = express();
 
+let events = [];
+
 app.get("/", function(req, resp) {
     resp.render('index', {
 
