@@ -14,10 +14,18 @@
     <p>Welcome {{name}}!!! You are {{adjective}} today!</p>
 
     <ul>
+        <form action="/event/add" method="POST">
+            <label for="name">Name of Event</label>
+            <input type="text" name="what">
+            <label for="town">Town</label>
+            <input type="text" name="where">
+            <input type="submit" value="send">
+        </form>
         {{#nameList}}
         <li>{{.}}</li>
         {{/nameList}}
     </ul>
+
 </body>
 
 </html>
