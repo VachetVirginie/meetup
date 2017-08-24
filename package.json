@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/VachetVirginie/meetup#readme",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.4",
+    "fs": "0.0.1-security",
     "mustache": "^2.3.0",
     "mustache-express": "^1.2.5",
     "mysql": "^2.14.1"
