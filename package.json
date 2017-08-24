@@ -23,6 +23,7 @@
   "dependencies": {
     "express": "^4.15.4",
     "mustache": "^2.3.0",
+    "mustache-express": "^1.2.5",
     "mysql": "^2.14.1"
   }
 }
