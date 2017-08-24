@@ -5,11 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Node Template Server</title>
 </head>
 
 <body>
-    <h1> okkkkkk </h1>
+    <h1>Node Template Server</h1>
+    <p>An example server using Node and a template engine.</p>
+    <p>Welcome {{name}}!!! You are {{adjective}} today!</p>
+
+    <ul>
+        {{#nameList}}
+        <li>{{.}}</li>
+        {{/nameList}}
+    </ul>
 </body>
 
 </html>
