@@ -1,11 +1,10 @@
 const fs = require('fs');
 const express = require('express');
 const mustache = require('mustache');
-
-
-
+const bodyParser = require('body-parser');
 
 let app = express();
+let events = [];
 
 app.get("/template", function(req, resp) {
     let str = mustache.render("Bienvenue {{name}}!!! Bien joué mm!", {
