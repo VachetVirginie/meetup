@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <title>Simplon Meetup</title>
     <style>
+        /*TODO: mettre le code dans le fichier style.css pour meilleure organisation*/
+        /***********FONTS*********/
+        
         @font-face {
             font-family: 'Raleway-Light';
             src: url('fonts/Raleway-Light.ttf');
@@ -23,8 +26,7 @@
         }
         
         html {
-            font-family: 'Raleway-Light;
-
+            font-family: 'Raleway-Light';
         }
         
         h1 {
@@ -52,121 +54,118 @@
 </head>
 
 <body>
-
-</body>
-
-</html>
-
-
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-            <a class="navbar-brand" href="#">Simplon Meetup</a>
+                <a class="navbar-brand" href="#">Simplon Meetup</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" placeholder="Email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-success" style='background-color:lightseagreen;border-color:lightseagreen' ;>Se connecter</button>
+                </form>
+            </div>
+            <!--/.navbar-collapse -->
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <form class="navbar-form navbar-right">
-                <div class="form-group">
-                    <input type="text" placeholder="Email" class="form-control">
+    </nav>
+
+    <!-- body form -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Bienvenue</h1>
+            <p>bla bla bla</p>
+            <p>
+                <a class="btn btn-primary btn-lg" style="background-color:lightseagreen;border-color:lightseagreen" href="#" role="button">En savoir plus »</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <h3>Poster un évènement</h3>
+            <br/><br/>
+            <form role="form" id="contactForm">
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <label for="name" class="h4">Pseudo</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter name" required>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="mdp" class="h4">Mot de passe</label>
+                        <input type="password" class="form-control" id="mdp" placeholder="Enter password" required>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <input type="password" placeholder="Password" class="form-control">
+                    <label for="message" class="h4 ">Message</label>
+                    <textarea id="message" class="form-control" rows="5" placeholder="Enter your message" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-success" style='background-color:lightseagreen;border-color:lightseagreen' ;>Se connecter</button>
+                <button type="submit" id="form-submit" style='background-color:lightseagreen;border-color:lightseagreen; ' class="btn btn-success btn-lg pull-right ">Submit</button>
+                <div id="msgSubmit" class="h3 text-center hidden">Message Submitted!</div>
             </form>
         </div>
-        <!--/.navbar-collapse -->
     </div>
-</nav>
-
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
+    </br>
+    </br>
+    </br>
     <div class="container">
-        <h1>Bienvenue</h1>
-        <p>bla bla bla</p>
-        <p>
-            <a class="btn btn-primary btn-lg" style="background-color:lightseagreen;border-color:lightseagreen" href="#" role="button">En savoir plus »</a>
-        </p>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-        <h3>Poster un évènement</h3>
-        <br/><br/>
-        <form role="form" id="contactForm">
-            <div class="row">
-                <div class="form-group col-sm-6">
-                    <label for="name" class="h4">Pseudo</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter name" required>
-                </div>
-                <div class="form-group col-sm-6">
-                    <label for="mdp" class="h4">Mot de passe</label>
-                    <input type="password" class="form-control" id="mdp" placeholder="Enter password" required>
-                </div>
+        <!-- row of events -->
+        <div class="row">
+            <div class="col-md-3 offset-md-4">
+                <h2>Evènement</h2>
+                <p>bla bla bla</p>
+                <p><a class="btn btn-default" href="#" role="button">En savoir plus »</a></p>
             </div>
-            <div class="form-group">
-                <label for="message" class="h4 ">Message</label>
-                <textarea id="message" class="form-control" rows="5" placeholder="Enter your message" required></textarea>
+            <div class="col-md-3 offset-md-4">
+                <h2>Evènement</h2>
+                <p>bla bla bla </p>
+                <p><a class="btn btn-default" href="#" role="button">En savoir plus »</a></p>
             </div>
-            <button type="submit" id="form-submit" style='background-color:lightseagreen;border-color:lightseagreen; ' class="btn btn-success btn-lg pull-right ">Submit</button>
-            <div id="msgSubmit" class="h3 text-center hidden">Message Submitted!</div>
-        </form>
+            <div class="col-md-3 offset-md-4">
+                <h2>Evènement</h2>
+                <p>bla bla bla</p>
+                <p><a class="btn btn-default" href="#" role="button">En savoir plus »</a></p>
+            </div>
+
+            <div class="col-md-3 offset-md-4">
+                <h2>Evènement</h2>
+                <p>bla bla bla</p>
+                <p><a class="btn btn-default" href="#" role="button">En savoir plus »</a></p>
+            </div>
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>© 2017 Simplon meetup, Inc.</p>
+        </footer>
     </div>
-</div>
-</br>
-</br>
-</br>
-<div class="container">
-    <!-- Example row of columns -->
-    <div class="row">
-        <div class="col-md-3 offset-md-4">
-            <h2>Evènement</h2>
-            <p>bla bla bla</p>
-            <p><a class="btn btn-default" href="#" role="button">En savoir plus »</a></p>
-        </div>
-        <div class="col-md-3 offset-md-4">
-            <h2>Evènement</h2>
-            <p>bla bla bla </p>
-            <p><a class="btn btn-default" href="#" role="button">En savoir plus »</a></p>
-        </div>
-        <div class="col-md-3 offset-md-4">
-            <h2>Evènement</h2>
-            <p>bla bla bla</p>
-            <p><a class="btn btn-default" href="#" role="button">En savoir plus »</a></p>
-        </div>
+    <!-- /container -->
+    <script>
+        var headroom = new Headroom(elem, {
+            "offset": 205,
+            "tolerance": 5,
+            "classes": {
+                "initial": "animated",
+                "pinned": "slideDown",
+                "unpinned": "slideUp"
+            }
+        });
+        headroom.init();
 
-        <div class="col-md-3 offset-md-4">
-            <h2>Evènement</h2>
-            <p>bla bla bla</p>
-            <p><a class="btn btn-default" href="#" role="button">En savoir plus »</a></p>
-        </div>
-    </div>
+        // to destroy
+        headroom.destroy();
+    </script>
+</body>
 
-    <hr>
-
-    <footer>
-        <p>© 2017 Simplon meetup, Inc.</p>
-    </footer>
-</div>
-<!-- /container -->
-<script>
-    var headroom = new Headroom(elem, {
-        "offset": 205,
-        "tolerance": 5,
-        "classes": {
-            "initial": "animated",
-            "pinned": "slideDown",
-            "unpinned": "slideUp"
-        }
-    });
-    headroom.init();
-
-    // to destroy
-    headroom.destroy();
-</script>
+</html>
