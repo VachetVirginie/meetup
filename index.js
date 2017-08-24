@@ -14,7 +14,6 @@ app.get("/template", function(req, resp) {
 });
 
 
-
 app.engine("html", function(path, options, callback) {
     fs.readFile(path, function(err, content) {
         if (err) {
