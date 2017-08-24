@@ -5,7 +5,14 @@ const mustache = require('mustache');
 
 
 
+<<<<<<< HEAD
 let app = express();
+=======
+let events = [];
+
+app.get("/", function(req, resp) {
+    resp.render('index', {
+>>>>>>> ece45a997034662fe9e194ff7efce3d7eb5216d3
 
 app.get("/template", function(req, resp) {
     let str = mustache.render("Bienvenue {{name}}!!! Bien joué mm!", {
