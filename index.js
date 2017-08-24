@@ -4,12 +4,14 @@ const mustache = require('mustache');
 
 
 
+
 let app = express();
 
-app.get("/", function(req, resp) {
-    resp.render('index', {
-
-    });
+app.get("/template", function(req, resp) {
+    let str = mustache.render("Bienvenue {{name}}!!! Bien joué mm!", {
+        name: "vivi"
+    })
+    resp.send(str)
 });
 
 
@@ -32,6 +34,11 @@ app.set('view engine', 'html');
 
 app.use(express.static("public"));
 
-app.listen(80, function() {
+app.listen(8082, function() {
     console.log('Server listening on port 80...');
 });
+
+
+//https://stackoverflow.com/questions/12752985/pass-global-variable-to-on-event-callback-function-in-javascript
+
+//
