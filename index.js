@@ -1,45 +1,29 @@
-const fs = require('fs');
-const express = require('express');
+var app = require('express')(),
+    server = require('http').createServer(app),
+    io = require('socket.io').listen(server),
+    ent = require('ent'), // Permet de bloquer les caractères HTML (sécurité équivalente à htmlentities en PHP)
+    fs = require('fs');
 const mustache = require('mustache');
 
-let db = ["A", "Premier", "devant", "LYON", "OULOULOU"];
+// Chargement de la page index.html
+app.get('/', function(req, res) {
+    res.sendfile(__dirname + '/public/index.html');
+});
 
-let app = express();
+io.sockets.on('connection', function(socket, pseudo) {
+    // Dès qu'on nous donne un pseudo, on le stocke en variable de session et on informe les autres personnes
+    socket.on('nouveau_client', function(pseudo) {
+        pseudo = ent.encode(pseudo);
+        socket.pseudo = pseudo;
+        socket.broadcast.emit('nouveau_client', pseudo);
+    });
 
-app.get("/", function(req, resp) {
-    resp.render('index', {
-        name: 'Toto',
-        adjective: 'happy',
-        nameList: db
+    // Dès qu'on reçoit un message, on récupère le pseudo de son auteur et on le transmet aux autres personnes
+    socket.on('message', function(message) {
+        message = ent.encode(message);
+        socket.broadcast.emit('message', { pseudo: socket.pseudo, message: message });
     });
 });
-
-var bodyParser = require('body-parser');
-var urlencodedparser = bodyParser.urlencoded({ extended: false });
-app.post('/login', urlencodedparser, function(req, res) {
-    console.log(req.body.username)
-});
-
-
-app.engine("html", function(path, options, callback) {
-    fs.readFile(path, function(err, content) {
-        if (err) {
-            console.error("fail to open template:", err);
-            return callback(err);
-        }
-        let str = mustache.render(content.toString(), options);
-        return callback(null, str);
-    })
-});
-
-// specify the views directory
-app.set('views', './views');
-// register the template engine
-app.set('view engine', 'html');
-
-app.use(express.static("public"));
-
-
 
 
 app.listen(8081, function() {
