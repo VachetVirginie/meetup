@@ -3,11 +3,10 @@ var app = require('express')(),
     io = require('socket.io').listen(server),
     ent = require('ent'), // Permet de bloquer les caractères HTML (sécurité équivalente à htmlentities en PHP)
     fs = require('fs');
-const mustache = require('mustache');
 
 // Chargement de la page index.html
 app.get('/', function(req, res) {
-    res.sendfile(__dirname + '/public/index.html');
+    res.sendfile(__dirname + '/index.html');
 });
 
 io.sockets.on('connection', function(socket, pseudo) {
@@ -25,7 +24,4 @@ io.sockets.on('connection', function(socket, pseudo) {
     });
 });
 
-
-app.listen(8081, function() {
-    console.log('Server listening on port 80...');
-});
+server.listen(8081);
