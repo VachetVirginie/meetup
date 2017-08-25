@@ -6,8 +6,8 @@ var app = require('express')(),
 const mustache = require('mustache');
 
 // Chargement de la page index.html
-app.get('/', function(req, res) {
-    res.sendfile(__dirname + '/public/index.html');
+app.get('/index.html', function(req, res) {
+    res.sendfile(__dirname + '/index.html');
 });
 
 io.sockets.on('connection', function(socket, pseudo) {
@@ -26,6 +26,6 @@ io.sockets.on('connection', function(socket, pseudo) {
 });
 
 
-app.listen(8082, function() {
+app.listen(8083, function() {
     console.log('Server listening on port 80...');
 });
