@@ -26,3 +26,5 @@ io.sockets.on('connection', function(socket, pseudo) {
 });
 
 server.listen(8081);
+
+console.log('server lunched');
