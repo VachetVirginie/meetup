@@ -57,10 +57,15 @@
             flex-direction: row;
         }
         
+<<<<<<< HEAD
+        #ligne {
+            display: flex;
+=======
         #zone_chat {
             display: flex;
             flex-direction: row;
             width: 800px;
+>>>>>>> 9195aa0e6b57e473dfe860114b4b91dad50f2498
         }
     </style>
 </head>
@@ -241,7 +246,7 @@
 
         socket.on('nouveau_client', function(pseudo) {
 
-            $('#zone_chat').prepend('<p><em>' + pseudo + ' a rejoint la plateforme !</em></p>');
+            $('#zone_chat').prepend('<div id="ligne"><p><em>' + pseudo + ' a rejoint la plateforme !</em></p></div>');
 
         })
 
