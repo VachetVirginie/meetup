@@ -16,7 +16,7 @@ app.get("/", function(req, resp) {
 
 var bodyParser = require('body-parser');
 var urlencodedparser = bodyParser.urlencoded({ extended: false });
-app.post('#', urlencodedparser, function(req, res) {
+app.post('/login', urlencodedparser, function(req, res) {
     console.log(req.body.username)
 });
 
