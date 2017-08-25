@@ -26,6 +26,6 @@ io.sockets.on('connection', function(socket, pseudo) {
 });
 
 
-app.listen(8081, function() {
+app.listen(8082, function() {
     console.log('Server listening on port 80...');
 });

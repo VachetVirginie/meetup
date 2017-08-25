@@ -6,7 +6,7 @@ var app = require('express')(),
 
 // Chargement de la page index.html
 app.get('/', function(req, res) {
-    res.sendfile(__dirname + '/index.html');
+    res.sendfile(__dirname + '/public/index.html');
 });
 
 io.sockets.on('connection', function(socket, pseudo) {
@@ -20,7 +20,8 @@ io.sockets.on('connection', function(socket, pseudo) {
     // Dès qu'on reçoit un message, on récupère le pseudo de son auteur et on le transmet aux autres personnes
     socket.on('message', function(message) {
         message = ent.encode(message);
-        socket.broadcast.emit('message', { pseudo: socket.pseudo, message: message });
+        socket.broadcast.emit('message', { pseudo: socket.pseudo });
+        socket.broadcast.emit('message', { message: message });
     });
 });
 
