@@ -27,5 +27,5 @@ io.sockets.on('connection', function(socket, pseudo) {
 
 
 app.listen(8082, function() {
-    console.log('Server listening on port 80...');
+    console.log('Server listening on port 8082 ( index working until post request are unused)');
 });
