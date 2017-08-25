@@ -27,4 +27,4 @@ io.sockets.on('connection', function(socket, pseudo) {
 
 server.listen(8081);
 
-console.log('server lunched');
+console.log('server lunched chat and index are on port 8081 enjoy ;)');
